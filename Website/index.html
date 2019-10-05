@@ -2,13 +2,24 @@
 <html>
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<script>
+		function testHideShow() {
+			var x = document.getElementById("test-left");
+			if (x.style.display === "none") {
+			x.style.display = "block";
+			}
+			else {
+			x.style.display = "none";
+			}	
+		}
+	</script>
 </head>
 <body>
 	<header>
-	
+		<button id="test-button" onclick="testHideShow()">Test for JS</button>
 	</header>
 	<main>
-	
+		<section id="test-left" style= "border: 1px solid black; display: none;">Hello world!</section>
 	</main>
 	<footer>
 	
