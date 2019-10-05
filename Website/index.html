@@ -6,7 +6,7 @@
 	<link rel="stylesheet" href="css/style.css">
 	<script>
 		function testHideShow() {
-			var x = document.getElementById("test-left");
+			var x = document.getElementById("<insert element name>");
 			if (x.style.display === "none") {
 			x.style.display = "block";
 			}
@@ -18,10 +18,16 @@
 </head>
 <body>
 	<header>
-		<button id="test-button" onclick="testHideShow()">Test for JS</button>
+		
 	</header>
 	<main>
-		<section id="test-left" style= "border: 1px solid black; display: none;">Hello world!</section>
+		<nav id="nav-menu">
+			<ul id="menu-items">
+				<li><button>Item 1</button></li>
+				<li><button>Item 2</button></li>
+				<li><button>Item 3</button></li>
+			</ul>
+		</nav>
 	</main>
 	<footer>
 
