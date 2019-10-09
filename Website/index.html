@@ -5,14 +5,30 @@
 	<title>Assignment 2 Group 12</title>
 	<link rel="stylesheet" href="css/style.css">
 	<script>
-		function testHideShow() {
-			var x = document.getElementById("<insert element name>");
-			if (x.style.display === "none") {
-			x.style.display = "block";
+	var sections = ["Welcome", "Stanton", "Jenna", "Samuel", "Cooper", "Lyly", "Mick"];
+	var visSection = null;
+	var sectionID = null;
+	
+		function changeActiveSection(sectionID) {
+			if (visSection === sectionID) {
+			visSection = null;
 			}
 			else {
-			x.style.display = "none";
+			visSection = sectionID;
 			}	
+			hideSections(sectionID);
+		}
+		function hideSections(sectionID) {
+			var i, section;
+			for(i = 0; i < sections.length; i++) {
+				sectionID = sections[i];
+				section = document.getElementById(sectionID);
+				if(visSection === sectionID) {
+				  section.style.display = "block";
+				} else {
+				  section.style.display = "none";
+				}
+			}
 		}
 	</script>
 </head>
@@ -23,14 +39,25 @@
 	<main>
 		<nav id="nav-menu">
 			<ul id="menu-items">
-				<li><button>Item 1</button></li>
-				<li><button>Item 2</button></li>
-				<li><button>Item 3</button></li>
+				<li><button onclick="changeActiveSection('Welcome')">Home</button></li>
+				<li><button onclick="changeActiveSection('Stanton')">Stanton</button></li>
+				<li><button onclick="changeActiveSection('Jenna')">Jenna</button></li>
 			</ul>
 		</nav>
-		<section id="Welcome" class="body-panel">
-			
-		</section>
+		<div id="Welcome" class="body-panel" style="border:1px solid black; display: none;">
+			<h2> this is a placeholder heading </h2>
+			<p> this is some placeholder body text. </p>
+		</div>
+		<div id="Stanton" class="body-panel" style="border:1px solid black; display: none;">
+			<h2> this is a placeholder heading </h2>
+			<p> this is some placeholder body text. </p>
+			<p> Stanton </p>
+		</div>
+		<div id="Jenna" class="body-panel" style="border:1px solid black; display: none;">
+			<h2> this is a placeholder heading </h2>
+			<p> this is some placeholder body text. </p>
+			<p> Jenna </p>
+		</div>
 	</main>
 	<footer>
 
