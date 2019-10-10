@@ -1,26 +1,78 @@
+
+/*Sets the font family for entire page.
+removes entire margin for body section to create borderless display.*/
 body {
 	font-family: Arial, Veranda, Serif;
 	margin: 0;
 }
 
+/*Sets attributes for the nav menu root element*/
 #nav-menu {
 	height: 100%;
 	width: 15%;
 	position: fixed;
 	top: 0;
 	left: 0;
-	background-color: #333;
+	background-color: #353940;
 	overflow-x: hidden;
-	padding-top: 20px;
 	text-decoration: none;
+	text-align: center;
+	z-index: 1;
+}
+/*specifies hyperlink button text attributes*/
+#nav-menu a {
+	text-decoration: none;
+	color: white;
+	font-size: 12pt;
+	display: block;
+	border-top: 1px solid white;
+	overflow: visible;
+	height: 20px;
+	padding-top: 5px;
+	padding-bottom: 5px;
 }
 
+/*Specifies most dropdown button attributes.*/
+button.drop-button {
+	text-decoration: none;
+	background-color: #353940;
+	border: 0;
+	width: 100%;
+	color: white;
+	height: 20px;
+	outline: none;
+	font-size: 12pt;
+	border-top: 1px solid white;
+	overflow: visible;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+/*Active class to highlight activated dropdown buttons*/
+button.active {
+	background: #230fa8;
+}
+
+/*container class for dropdown menu items - hidden by default (display is manupulated via JS)*/
+.dropdown-content {
+	display: none;
+	background-color: #4a5059;
+}
+
+/*specifies layout for dropdown menu items*/
+.dropdown-content a {
+	display: block;
+	padding-top: 5px;
+}
+/*keeps header in line with rest of body*/
 #header-content {
 	padding-left: 17%;
 }
-
+/*specifies positioning for body container divs*/
 .body-panel {
 	display: none;
 	position: absolute;
 	padding-left: 17%;
+	width: 75%;
 }
+

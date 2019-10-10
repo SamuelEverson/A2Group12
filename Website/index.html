@@ -4,7 +4,54 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" meta charset="utf-8" />
 	<title>Assignment 2 Group 12</title>
 	<link rel="stylesheet" href="css/style.css">
-	<script>
+</head>
+<body>
+	<header>
+		<h1 id="header-content" style="display: block;">Welcome to The A2-Group-12 Team</h1>
+	</header>
+	<main>
+		<nav id="nav-menu">
+			<a href="#" onclick="changeActiveSection('Welcome')">Home</a>
+			<button class="drop-button">About Us &#x25BC </button>
+			<div class="dropdown-content" style="display: none;">
+				<a href="#" onclick="changeActiveSection('Stanton')">Stanton</a>
+				<a href="#" onclick="changeActiveSection('Jenna')">Jenna</a>
+				<a href="#" onclick="changeActiveSection('Cooper')">Cooper</a>
+			</div>
+			<button class="drop-button">Profile &#x25BC;</button>
+			<div class="dropdown-content">
+				<a href="#">Test</a>
+			</div>
+			<a href="#" onclick="changeActiveSection('IT Work')">IT Work</a>
+			<a href="#" onclick="changeActiveSection('Industry Data')">Industry Data</a>
+			<a href="#" onclick="changeActiveSection('Our Project')">Our Project</a>
+			<a href="#" onclick="changeActiveSection('IT Technologies')">IT Technologies</a>
+			
+		</nav>
+		<div id="Welcome" class="body-panel" style="display: block;">
+			<h2> </h2>
+			<p> Please select an option from the menu. </p>
+		</div>
+		<div id="Stanton" class="body-panel">
+			<h2> this is a placeholder heading </h2>
+			<p> this is some placeholder body text. </p>
+			<p> Stanton </p>
+		</div>
+		<div id="Jenna" class="body-panel">
+			<h2> this is a placeholder heading </h2>
+			<p> this is some placeholder body text. </p>
+			<p> Jenna </p>
+		</div>
+		<div id="Cooper" class="body-panel">
+			<h2> this is a placeholder heading </h2>
+			<p> this is some placeholder body text. </p>
+			<p> Cooper </p>
+		</div>
+	</main>
+	<footer>
+
+	</footer>
+	<script>	
 	var sections = ["Welcome", "Stanton", "Jenna", "Samuel", "Cooper", "Lyly", "Mick"];
 	var visSection = null;
 	var sectionID = null;
@@ -15,6 +62,8 @@
 			}
 			else {
 			visSection = sectionID;
+	//to be removed
+			alert(visSection);
 			}	
 			hideSections(sectionID);
 		}
@@ -22,6 +71,8 @@
 			var i, section, headerText;
 			for(i = 0; i < sections.length; i++) {
 				sectionID = sections[i];
+		//to be removed
+				alert(sectionID);
 				section = document.getElementById(sectionID);
 				if(visSection === sectionID) {
 				  section.style.display = "block";
@@ -36,52 +87,22 @@
 			var ob;
 			ob = document.getElementById("header-content");
 			ob.innerText = headerText;
-		}
-	</script>
-</head>
-<body>
-	<header>
-		<h1 id="header-content"></h1>
-	</header>
-	<main>
-		<nav id="nav-menu">
-			<a href="#" onclick="changeActiveSection('Welcome')">Home</a>
-			<div class="hover-buttons">
-				<button class="drop-button">About Us &#x25BC"</button>
-			</div>
-				<div class="dropdown-content">
-					<a href="#" onclick="changeActiveSection('Stanton')">Stanton</a>
-					<a href="#" onclick="changeActiveSection('Jenna')">Jenna</a>
-					<a href="#" onclick="changeActiveSection('Cooper')">Cooper</a>
-				</div>
-			<div class="hover-buttons">
-				<button class="drop-button">Group Profile &#x25BC;</button>
-			</div>
-				<div class="dropdown-content">
-					<a href="#">Test</a>
-				</div>
-		</nav>
-		<div id="Welcome" class="body-panel">
-			<h2> this is a placeholder heading </h2>
-			<p> this is some placeholder body text. </p>
-		</div>
-		<div id="Stanton" class="body-panel">
-			<h2> this is a placeholder heading </h2>
-			<p> this is some placeholder body text. </p>
-			<p> Stanton </p>
-		</div>
-		<div id="Jenna" class="body-panel">
-			<h2> this is a placeholder heading </h2>
-			<p> this is some placeholder body text. </p>
-			<p> Jenna </p>
-		<div id="Cooper" class="body-panel">
-			<h2> this is a placeholder heading </h2>
-			<p> this is some placeholder body text. </p>
-			<p> Cooper </p>
-		</div>
-	</main>
-	<footer>
+		}	
+		
+	var dropdown = document.getElementsByTagName("button");
+	var i, objCol;
 
-	</footer>
+	for (i = 0; i < dropdown.length; i++) {
+	  dropdown[i].addEventListener("click", function() {
+		this.classList.toggle("active");
+		var dropdownContent = this.nextElementSibling;
+		if (dropdownContent.style.display === "block") {
+		  dropdownContent.style.display = "none";
+		} else {
+		  dropdownContent.style.display = "block";
+		}
+	  });
+	 }
+	</script>
 </body>
 </html>
