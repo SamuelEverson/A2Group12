@@ -70,7 +70,6 @@ button.active {
 }
 /*specifies positioning for body container divs*/
 .body-panel {
-	display: none;
 	position: absolute;
 	padding-left: 17%;
 	width: 75%;
